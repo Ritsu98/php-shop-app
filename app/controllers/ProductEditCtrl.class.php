@@ -49,7 +49,7 @@ class ProductEditCtrl {
         $this->form->name = $v->validateFromPost('name', [
             'trim' => true,
             'required' => true,
-            'required_message' => 'Podaj imię',
+            'required_message' => 'Podaj nazwę produktu',
             'min_length' => 2,
             'max_length' => 32,
             'validator_message' => 'Nazwa produktu powinna zawierać od 2 do 32 znaków'
@@ -58,24 +58,31 @@ class ProductEditCtrl {
         // Używaj walidatora z konfiguracją "'required' => true" aby sprawdzić,
         // czy parametr NIE JEST PUSTY (!empty)
         
-        $this->form->surname = $v->validateFromPost('surname', [
+        $this->form->price = $v->validateFromPost('price', [
             'trim' => true,
             'required' => true,
             'required_message' => 'Podaj nazwisko',
-            'min_length' => 2,
+            'min_length' => 1,
             'max_length' => 20,
             'validator_message' => 'Nazwisko powinno mieć od 2 do 20 znaków'
         ]);
-        $date = $v->validateFromPost('birthdate', [
+        $this->form->description = $v->validateFromPost('description', [
             'trim' => true,
             'required' => true,
-            'required_message' => "Wprowadź datę urodzenia",
-            'date_format' => 'Y-m-d',
-            'validator_message' => "Niepoprawny format daty. Przykład: 2001-04-15"
+            'required_message' => 'Podaj opis produktu',
+            'min_length' => 0,
+            'max_length' => 200,
+            'validator_message' => 'Opis może zawierać maksymalnie 200 znaków'
         ]);
-        if ($v->isLastOK()) {
-            $this->form->birthdate = $date->format('Y-m-d');
-        }
+        $this->form->category_id = $v->validateFromPost('category_id', [
+            'trim' => true,
+            'required' => true,
+            'required_message' => 'Podaj id kategorii',
+            'min_length' => 0,
+            'max_length' => 200,
+            'validator_message' => 'Opis może zawierać maksymalnie 200 znaków'
+        ]);
+        
         return !App::getMessages()->isError();
     }
 
@@ -92,7 +99,7 @@ class ProductEditCtrl {
     }
 
     //wysiweltenie rekordu do edycji wskazanego parametrem 'id'
-    public function action_personEdit() {
+    public function action_productEdit() {
         // 1. walidacja id osoby do edycji
         if ($this->validateEdit()) {
             try {
@@ -101,10 +108,11 @@ class ProductEditCtrl {
                     "product_id" => $this->form->id
                 ]);
                 // 2.1 jeśli osoba istnieje to wpisz dane do obiektu formularza
-                $this->form->id = $record['idperson'];
+                $this->form->id = $record['product_id'];
                 $this->form->name = $record['name'];
-                $this->form->surname = $record['surname'];
-                $this->form->birthdate = $record['birthdate'];
+                $this->form->price = $record['prize'];
+                $this->form->category_id = $record['category_id'];
+                $this->form->description = $record['description'];
             } catch (\PDOException $e) {
                 Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
                 if (App::getConf()->debug)
@@ -116,14 +124,14 @@ class ProductEditCtrl {
         $this->generateView();
     }
 
-    public function action_personDelete() {
+    public function action_productDelete() {
         // 1. walidacja id osoby do usuniecia
         if ($this->validateEdit()) {
 
             try {
                 // 2. usunięcie rekordu
-                App::getDB()->delete("person", [
-                    "idperson" => $this->form->id
+                App::getDB()->delete("product", [
+                    "product_id" => $this->form->id
                 ]);
                 Utils::addInfoMessage('Pomyślnie usunięto rekord');
             } catch (\PDOException $e) {
@@ -134,10 +142,10 @@ class ProductEditCtrl {
         }
 
         // 3. Przekierowanie na stronę listy osób
-        App::getRouter()->forwardTo('personList');
+        App::getRouter()->forwardTo('productList');
     }
 
-    public function action_personSave() {
+    public function action_productSave() {
 
         // 1. Walidacja danych formularza (z pobraniem)
         if ($this->validateSave()) {
@@ -147,12 +155,14 @@ class ProductEditCtrl {
                 //2.1 Nowy rekord
                 if ($this->form->id == '') {
                     //sprawdź liczebność rekordów - nie pozwalaj przekroczyć 20
-                    $count = App::getDB()->count("person");
+                    $count = App::getDB()->count("product");
                     if ($count <= 20) {
-                        App::getDB()->insert("person", [
+                        App::getDB()->insert("product", [
                             "name" => $this->form->name,
-                            "surname" => $this->form->surname,
-                            "birthdate" => $this->form->birthdate
+                            "prize" => $this->form->price,
+                            "description" => $this->form->description,
+                            "category_id" => $this->form->category_id,
+
                         ]);
                     } else { //za dużo rekordów
                         // Gdy za dużo rekordów to pozostań na stronie
@@ -162,12 +172,13 @@ class ProductEditCtrl {
                     }
                 } else {
                     //2.2 Edycja rekordu o danym ID
-                    App::getDB()->update("person", [
+                    App::getDB()->update("product", [
                         "name" => $this->form->name,
-                        "surname" => $this->form->surname,
-                        "birthdate" => $this->form->birthdate
+                        "prize" => $this->form->price,
+                        "description" => $this->form->description,
+                        "category_id" => $this->form->category_id
                             ], [
-                        "idperson" => $this->form->id
+                        "product_id" => $this->form->id
                     ]);
                 }
                 Utils::addInfoMessage('Pomyślnie zapisano rekord');
@@ -178,7 +189,7 @@ class ProductEditCtrl {
             }
 
             // 3b. Po zapisie przejdź na stronę listy osób (w ramach tego samego żądania http)
-            App::getRouter()->forwardTo('personList');
+            App::getRouter()->forwardTo('productList');
         } else {
             // 3c. Gdy błąd walidacji to pozostań na stronie
             $this->generateView();

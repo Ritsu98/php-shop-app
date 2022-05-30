@@ -13,7 +13,10 @@ Utils::addRoute('login', 'LoginCtrl');
 Utils::addRoute('loginView',     'LoginCtrl');
 Utils::addRoute('logout',        'LoginCtrl');
 Utils::addRoute('productList',    'ProductListCtrl',	['admin','user']);
-
 Utils::addRoute('productListPart','ProductListCtrl',	['admin']);
 Utils::addRoute('productNew',    'ProductEditCtrl',	['admin','user']);
+Utils::addRoute('productEdit',    'ProductEditCtrl',	['admin','user']);
+Utils::addRoute('productSave',    'ProductEditCtrl',	['admin','user']);
+Utils::addRoute('productDelete',    'ProductEditCtrl',	['admin','user']);
+
 Utils::addRoute('showCart', 'CartCtrl');
