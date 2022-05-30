@@ -6,26 +6,27 @@
             <form action="{$conf->action_root}login" method="post">
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="id_login" name="login" value="{$form->login}" class="form-control" />
-                    <label class="form-label" for="form2Example1">Email address</label>
+                    <input type="text" id="id_name" name="name" value="{$form->login}" class="form-control" />
+                    <label class="form-label" for="form2Example1">Name</label>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                    <input type="password" id="id_pass" name="pass" class="form-control" />
-                    <label class="form-label" for="form2Example2">Password</label>
+                    <input type="text" id="id_pass" name="pass" class="form-control" />
+                    <label class="form-label" for="form2Example2">Price</label>
                 </div>
 
+                <div class="form-outline mb-4">
+                    <input type="textarea" id="description" name="description" class="form-control" />
+                    <label class="form-label" for="form2Example2">Description</label>
+                </div>
                 <!-- 2 column grid layout for inline styling -->
-               
+
+
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 
-                <!-- Register buttons -->
-                <div class="text-center">
-                    <p>Not a member? <a href="#!">Register</a></p>
-                    <p>or sign up with:</p>
-                </div>
+
             </form>
             {if $msgs->isMessage()}
                 <div class="messages bottom-margin">

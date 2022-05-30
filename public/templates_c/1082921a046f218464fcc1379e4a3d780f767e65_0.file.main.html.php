@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-05-30 21:58:54
+/* Smarty version 4.1.0, created on 2022-05-30 22:33:28
   from 'D:\xammp\htdocs\php-shop-app\app\views\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_629521fe702cf7_02109868',
+  'unifunc' => 'content_62952a18cb4d30_15856825',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1082921a046f218464fcc1379e4a3d780f767e65' => 
     array (
       0 => 'D:\\xammp\\htdocs\\php-shop-app\\app\\views\\templates\\main.html',
-      1 => 1653940729,
+      1 => 1653942805,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_629521fe702cf7_02109868 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62952a18cb4d30_15856825 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -49,7 +49,6 @@ home">Home</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">About</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
@@ -102,7 +101,7 @@ loginView" >
         </header>
         <!-- Section-->
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_384282621629521fe7020b6_61119404', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_127127446462952a18cb4293_63898067', 'content');
 ?>
 
         <!-- Footer-->
@@ -122,12 +121,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_384282621629521fe7
 </html>
 <?php }
 /* {block 'content'} */
-class Block_384282621629521fe7020b6_61119404 extends Smarty_Internal_Block
+class Block_127127446462952a18cb4293_63898067 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_384282621629521fe7020b6_61119404',
+    0 => 'Block_127127446462952a18cb4293_63898067',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

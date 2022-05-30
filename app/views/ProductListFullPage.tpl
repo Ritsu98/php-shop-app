@@ -1,17 +1,11 @@
 {extends file="main.html"}
 {block name=content}
-<div class="bottom-margin">
-<a class="pure-button button-success" href="{$conf->action_root}personNew">+ Nowa osoba</a>
-</div>	
+
 <div class="container">
-{*    {foreach $products as $p}*}
-{*    {strip}*}
-{*        {foreach $p as $e}*}
-{*            <span>{$e}</span>*}
-{*        {/foreach}*}
-{*    {/strip}*}
-{*    {/foreach}*}
-<div id="table" class="container">
+    <div class="m-2 ">
+        <a class="btn btn-success float-end m-1" href="{$conf->action_root}productNew">+ Nowy produkt</a>
+    </div>
+    <div id="table" class="container">
 {include file="ProductListTable.tpl"}
 </div>
 

@@ -2,11 +2,12 @@
 
 namespace app\controllers;
 
+use app\forms\ProductEditForm;
 use core\App;
 use core\Utils;
 use core\ParamUtils;
 use core\Validator;
-use app\forms\PersonEditForm;
+
 
 class ProductEditCtrl {
 
@@ -86,7 +87,7 @@ class ProductEditCtrl {
         return !App::getMessages()->isError();
     }
 
-    public function action_personNew() {
+    public function action_productNew() {
         $this->generateView();
     }
 
@@ -186,7 +187,7 @@ class ProductEditCtrl {
 
     public function generateView() {
         App::getSmarty()->assign('form', $this->form); // dane formularza dla widoku
-        App::getSmarty()->display('PersonEdit.tpl');
+        App::getSmarty()->display('ProductAdd.tpl');
     }
 
 }

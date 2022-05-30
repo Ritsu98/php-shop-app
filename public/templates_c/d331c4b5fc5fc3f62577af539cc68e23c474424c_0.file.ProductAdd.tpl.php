@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-05-30 23:19:54
-  from 'D:\xammp\htdocs\php-shop-app\app\views\Login.tpl' */
+/* Smarty version 4.1.0, created on 2022-05-30 23:04:03
+  from 'D:\xammp\htdocs\php-shop-app\app\views\ProductAdd.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_629534fae19d10_60295333',
+  'unifunc' => 'content_62953143402084_56343800',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '75d85d93bf1fbef26da395a0eb16badfe47f0259' => 
+    'd331c4b5fc5fc3f62577af539cc68e23c474424c' => 
     array (
-      0 => 'D:\\xammp\\htdocs\\php-shop-app\\app\\views\\Login.tpl',
-      1 => 1653945586,
+      0 => 'D:\\xammp\\htdocs\\php-shop-app\\app\\views\\ProductAdd.tpl',
+      1 => 1653944355,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_629534fae19d10_60295333 (Smarty_Internal_Template $_smarty_tpl) {
+function content_62953143402084_56343800 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1265992090629534fae0ff94_84516376', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_565060408629531433f7a78_05397294', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.html");
 }
 /* {block 'content'} */
-class Block_1265992090629534fae0ff94_84516376 extends Smarty_Internal_Block
+class Block_565060408629531433f7a78_05397294 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1265992090629534fae0ff94_84516376',
+    0 => 'Block_565060408629531433f7a78_05397294',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -50,27 +50,28 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 login" method="post">
                 <!-- Email input -->
                 <div class="form-outline mb-4">
-                    <input type="text" id="id_login" name="login" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->login;?>
+                    <input type="text" id="id_name" name="name" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->login;?>
 " class="form-control" />
-                    <label class="form-label" for="form2Example1">Email address</label>
+                    <label class="form-label" for="form2Example1">Name</label>
                 </div>
 
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                    <input type="password" id="id_pass" name="pass" class="form-control" />
-                    <label class="form-label" for="form2Example2">Password</label>
+                    <input type="text" id="id_pass" name="pass" class="form-control" />
+                    <label class="form-label" for="form2Example2">Price</label>
                 </div>
 
+                <div class="form-outline mb-4">
+                    <input type="textarea" id="description" name="description" class="form-control" />
+                    <label class="form-label" for="form2Example2">Description</label>
+                </div>
                 <!-- 2 column grid layout for inline styling -->
-               
+
+
                 <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
 
-                <!-- Register buttons -->
-                <div class="text-center">
-                    <p>Not a member? <a href="#!">Register</a></p>
-                    <p>or sign up with:</p>
-                </div>
+
             </form>
             <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isMessage()) {?>
                 <div class="messages bottom-margin">
