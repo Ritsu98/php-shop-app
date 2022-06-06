@@ -12,11 +12,15 @@
                     </div>
                     <p class="lead">{$item['description']}</p>
                     <div class="d-flex">
-                        <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
-                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
-                            <i class="bi-cart-fill me-1"></i>
-                            Add to cart
-                        </button>
+                        <form action="{$conf->action_url}addToCart/{$id}" method="post">
+                            <input  name ="item_name"  value={$item['name']} hidden />
+                            <input  name ="price"  value={$item['prize']} hidden />
+                            <input class="form-control text-center me-3" id="inputQuantity" name ="quantity" type="num" value="1" style="max-width: 3rem" />
+                            <button class="btn btn-outline-dark flex-shrink-0" type="submit">
+                                <i class="bi-cart-fill me-1"></i>
+                                Add to cart
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>

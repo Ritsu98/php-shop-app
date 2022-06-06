@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-05-30 22:33:28
+/* Smarty version 4.1.0, created on 2022-06-06 19:34:25
   from 'D:\xammp\htdocs\php-shop-app\app\views\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_62952a18cb4d30_15856825',
+  'unifunc' => 'content_629e3aa114bd97_68854011',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1082921a046f218464fcc1379e4a3d780f767e65' => 
     array (
       0 => 'D:\\xammp\\htdocs\\php-shop-app\\app\\views\\templates\\main.html',
-      1 => 1653942805,
+      1 => 1654536858,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62952a18cb4d30_15856825 (Smarty_Internal_Template $_smarty_tpl) {
+function content_629e3aa114bd97_68854011 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -66,7 +66,9 @@ showCart">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">
+                                0
+                            </span>
                         </button>
                     </form>
 
@@ -101,7 +103,7 @@ loginView" >
         </header>
         <!-- Section-->
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_127127446462952a18cb4293_63898067', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_204415008629e3aa114b2e6_11617380', 'content');
 ?>
 
         <!-- Footer-->
@@ -121,12 +123,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_127127446462952a18
 </html>
 <?php }
 /* {block 'content'} */
-class Block_127127446462952a18cb4293_63898067 extends Smarty_Internal_Block
+class Block_204415008629e3aa114b2e6_11617380 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_127127446462952a18cb4293_63898067',
+    0 => 'Block_204415008629e3aa114b2e6_11617380',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

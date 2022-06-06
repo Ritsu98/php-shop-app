@@ -76,7 +76,7 @@ class HomeCtrl {
 
     public function action_itemView() {
         $id = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji');
-        // 1. walidacja id osoby do edycji
+
         $this->validate();
 
         try {

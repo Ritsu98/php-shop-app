@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-05-30 19:07:49
+/* Smarty version 4.1.0, created on 2022-06-06 23:26:19
   from 'D:\xammp\htdocs\php-shop-app\app\views\Cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_6294f9e5e1b746_27849069',
+  'unifunc' => 'content_629e70fb88d945_31258685',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5b3ddc7137fb4b463d42a81855a03ba7d6aa8c70' => 
     array (
       0 => 'D:\\xammp\\htdocs\\php-shop-app\\app\\views\\Cart.tpl',
-      1 => 1653927762,
+      1 => 1654550758,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6294f9e5e1b746_27849069 (Smarty_Internal_Template $_smarty_tpl) {
+function content_629e70fb88d945_31258685 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21277324866294f9e5e1b114_42698058', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_324063222629e70fb881fc6_02586467', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.html");
 }
 /* {block 'content'} */
-class Block_21277324866294f9e5e1b114_42698058 extends Smarty_Internal_Block
+class Block_324063222629e70fb881fc6_02586467 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_21277324866294f9e5e1b114_42698058',
+    0 => 'Block_324063222629e70fb881fc6_02586467',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -61,7 +61,30 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
 
                 <div class="card rounded-3 mb-4">
+
                     <div class="card-body p-4">
+                        <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isInfo()) {?>
+
+                                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getMessages(), 'msg');
+$_smarty_tpl->tpl_vars['msg']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['msg']->value) {
+$_smarty_tpl->tpl_vars['msg']->do_else = false;
+?>
+                                    <h1><?php echo $_smarty_tpl->tpl_vars['msg']->value->text;?>
+</h1>
+                                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+
+                        <?php }?>
+                        <?php if ($_smarty_tpl->tpl_vars['cart']->value != 0) {?>
+                        <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['cart']->value, 'item', false, 'keys');
+$_smarty_tpl->tpl_vars['item']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['keys']->value => $_smarty_tpl->tpl_vars['item']->value) {
+$_smarty_tpl->tpl_vars['item']->do_else = false;
+?>
                         <div class="row d-flex justify-content-between align-items-center">
                             <div class="col-md-2 col-lg-2 col-xl-2">
                                 <img
@@ -69,7 +92,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                         class="img-fluid rounded-3" alt="Cotton T-shirt">
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-3">
-                                <p class="lead fw-normal mb-2">Basic T-shirt</p>
+                                <p class="lead fw-normal mb-2"><?php echo $_smarty_tpl->tpl_vars['item']->value["name"];?>
+</p>
                                 <p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
@@ -78,7 +102,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                     <i class="fas fa-minus"></i>
                                 </button>
 
-                                <input id="form1" min="0" name="quantity" value="2" type="number"
+                                <input id="form1" min="0" name="quantity" value=<?php echo $_smarty_tpl->tpl_vars['item']->value["quantity"];?>
+ type="number"
                                        class="form-control form-control-sm" />
 
                                 <button class="btn btn-link px-2"
@@ -87,20 +112,33 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                                 </button>
                             </div>
                             <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                <h5 class="mb-0">$499.00</h5>
+                                <h5 class="mb-0"><?php ob_start();
+echo $_smarty_tpl->tpl_vars['item']->value["quantity"];
+$_prefixVariable1 = ob_get_clean();
+echo $_smarty_tpl->tpl_vars['item']->value["price"]*$_prefixVariable1;?>
+ zł</h5>
                             </div>
                             <div class="col-md-1 col-lg-1 col-xl-1 text-end">
-                                <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+                                <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+deleteFromCart/<?php echo $_smarty_tpl->tpl_vars['keys']->value;?>
+" class="text-danger"><i class="fas fa-trash fa-lg"> Remove</i></a>
                             </div>
+
                         </div>
+                            <input type="text" hidden value=<?php echo $_smarty_tpl->tpl_vars['item']->value["item_id"];?>
+ />
+                        <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                        <?php }?>
                     </div>
-                </div>
 
 
 
                 <div class="card">
                     <div class="card-body">
-                        <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+                        <a type="button" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
+placeOrder" class="btn btn-warning btn-block btn-lg">Proceed to Pay</a>
                     </div>
                 </div>
 

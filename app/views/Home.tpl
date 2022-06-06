@@ -31,9 +31,14 @@
                                 </div>
                             </div>
                             <!-- Product actions-->
+                            <form action="{$conf->action_url}addToCart/{$p['product_id']}" method="post">
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                                <div class="text-center"><button class="btn btn-outline-dark mt-auto" type="submit">Add to cart</button></div>
                             </div>
+                                <input type="text" name="item_name" hidden value="{$p["name"]}">
+                                <input type="text" name="price" hidden value="{$p["prize"]}">
+                                <input type="text" name="quantity" hidden value=1>
+                            </form>
                         </div>
                     </div>
                     {/strip}
