@@ -23,3 +23,5 @@ Utils::addRoute('showCart', 'CartCtrl');
 Utils::addRoute('addToCart', 'CartCtrl');
 Utils::addRoute('deleteFromCart', 'CartCtrl');
 Utils::addRoute('placeOrder', 'OrderCtrl',['admin','user']);
+Utils::addRoute('ordersList', 'OrderListCtrl',['worker']);
+Utils::addRoute('statusUpdate', 'OrderListCtrl',['worker']);

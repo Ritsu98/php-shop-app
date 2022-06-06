@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-06-06 23:26:19
+/* Smarty version 4.1.0, created on 2022-06-07 00:03:26
   from 'D:\xammp\htdocs\php-shop-app\app\views\Cart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_629e70fb88d945_31258685',
+  'unifunc' => 'content_629e79ae5932a6_00207373',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5b3ddc7137fb4b463d42a81855a03ba7d6aa8c70' => 
     array (
       0 => 'D:\\xammp\\htdocs\\php-shop-app\\app\\views\\Cart.tpl',
-      1 => 1654550758,
+      1 => 1654552726,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_629e70fb88d945_31258685 (Smarty_Internal_Template $_smarty_tpl) {
+function content_629e79ae5932a6_00207373 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_324063222629e70fb881fc6_02586467', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1727075201629e79ae5885a8_95865200', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.html");
 }
 /* {block 'content'} */
-class Block_324063222629e70fb881fc6_02586467 extends Smarty_Internal_Block
+class Block_1727075201629e79ae5885a8_95865200 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_324063222629e70fb881fc6_02586467',
+    0 => 'Block_1727075201629e79ae5885a8_95865200',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -50,15 +50,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
-                    <div>
-                        <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">price <i
-                                        class="fas fa-angle-down mt-1"></i></a></p>
-                    </div>
+
                 </div>
-
-
-
-
 
                 <div class="card rounded-3 mb-4">
 
@@ -89,12 +82,11 @@ $_smarty_tpl->tpl_vars['item']->do_else = false;
                             <div class="col-md-2 col-lg-2 col-xl-2">
                                 <img
                                         src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
-                                        class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                        class="img-fluid rounded-3" alt="">
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-3">
                                 <p class="lead fw-normal mb-2"><?php echo $_smarty_tpl->tpl_vars['item']->value["name"];?>
 </p>
-                                <p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                                 <button class="btn btn-link px-2"
@@ -138,7 +130,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                 <div class="card">
                     <div class="card-body">
                         <a type="button" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_url;?>
-placeOrder" class="btn btn-warning btn-block btn-lg">Proceed to Pay</a>
+placeOrder" class="btn btn-warning btn-block btn-lg">Place order</a>
                     </div>
                 </div>
 

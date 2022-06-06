@@ -7,15 +7,8 @@
 
                 <div class="d-flex justify-content-between align-items-center mb-4">
                     <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
-                    <div>
-                        <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">price <i
-                                        class="fas fa-angle-down mt-1"></i></a></p>
-                    </div>
+
                 </div>
-
-
-
-
 
                 <div class="card rounded-3 mb-4">
 
@@ -33,11 +26,10 @@
                             <div class="col-md-2 col-lg-2 col-xl-2">
                                 <img
                                         src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
-                                        class="img-fluid rounded-3" alt="Cotton T-shirt">
+                                        class="img-fluid rounded-3" alt="">
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-3">
                                 <p class="lead fw-normal mb-2">{$item["name"]}</p>
-                                <p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>
                             </div>
                             <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                                 <button class="btn btn-link px-2"
@@ -70,7 +62,7 @@
 
                 <div class="card">
                     <div class="card-body">
-                        <a type="button" href="{$conf->action_url}placeOrder" class="btn btn-warning btn-block btn-lg">Proceed to Pay</a>
+                        <a type="button" href="{$conf->action_url}placeOrder" class="btn btn-warning btn-block btn-lg">Place order</a>
                     </div>
                 </div>
 
