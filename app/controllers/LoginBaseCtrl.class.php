@@ -92,7 +92,7 @@ class LoginBaseCtrl {
         if ($this->records["0"]["name"] == "admin") {
             RoleUtils::addRole('admin');
         } else  if ($this->records["0"]["name"] == "worker") {
-            RoleUtils::addRole('user');
+            RoleUtils::addRole('worker');
         } else {
             Utils::addErrorMessage('Niepoprawny login lub hasło');
         }

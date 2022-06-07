@@ -14,6 +14,7 @@ class OrderListCtrl {
     private $form; //dane formularza wyszukiwania
     private $records; //rekordy pobrane z bazy danych
     private $editform;
+    private $order_item;
     public function __construct() {
         //stworzenie potrzebnych obiektów
         $this->form = new ProductSearchForm();
@@ -107,5 +108,26 @@ class OrderListCtrl {
         App::getSmarty()->assign('searchForm', $this->form);
         App::getSmarty()->assign('orders', $this->records);
         App::getSmarty()->display('OrdersListTable.tpl');
+    }
+    public function action_orderView() {
+        $id = ParamUtils::getFromCleanURL(1, true, 'Błędne wywołanie aplikacji');
+
+
+        try {
+            $this->records = App::getDB()->query("
+            SELECT p.name, o.quantity FROM order_items o INNER JOIN product p ON p.product_id = o.product_id where o.order_id = :order;
+            ",[':order'=>$id])->fetchAll();
+
+        } catch (\PDOException $e) {
+            Utils::addErrorMessage('Wystąpił błąd podczas odczytu rekordu');
+            if (App::getConf()->debug)
+                Utils::addErrorMessage($e->getMessage());
+        }
+
+
+        // 3. Wygenerowanie widoku
+        App::getSmarty()->assign('id',$id);
+        App::getSmarty()->assign('order',$this->records);
+        App::getSmarty()->display("Order.tpl");
     }
 }

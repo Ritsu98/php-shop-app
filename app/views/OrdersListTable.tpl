@@ -23,7 +23,7 @@
 			</select>
 			<button type="submit"class="btn btn-success"
 					href= "">Zapisz</button>
-				<a class="btn btn-secondary" href="{$conf->action_url}orderShow/{$p['product_id']}">Podgląd</a>
+				<a class="btn btn-secondary" href="{$conf->action_url}orderView/{$o['order_id']}">Podgląd</a>
 			</form>
 
 			&nbsp;
