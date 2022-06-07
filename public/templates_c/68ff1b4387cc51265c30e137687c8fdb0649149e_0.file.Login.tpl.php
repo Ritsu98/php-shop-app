@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-05-31 00:06:13
+/* Smarty version 4.1.0, created on 2022-06-07 05:23:49
   from 'C:\xammp\htdocs\php-shop-app\app\views\Login.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_62953fd5132055_33907341',
+  'unifunc' => 'content_629ec4c5c38e38_66099227',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '68ff1b4387cc51265c30e137687c8fdb0649149e' => 
     array (
       0 => 'C:\\xammp\\htdocs\\php-shop-app\\app\\views\\Login.tpl',
-      1 => 1653947344,
+      1 => 1654571556,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_62953fd5132055_33907341 (Smarty_Internal_Template $_smarty_tpl) {
+function content_629ec4c5c38e38_66099227 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_199731828562953fd51207a7_73141135', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_264848056629ec4c5c21131_38217660', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.html");
 }
 /* {block 'content'} */
-class Block_199731828562953fd51207a7_73141135 extends Smarty_Internal_Block
+class Block_264848056629ec4c5c21131_38217660 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_199731828562953fd51207a7_73141135',
+    0 => 'Block_264848056629ec4c5c21131_38217660',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,7 +52,7 @@ login" method="post">
                 <div class="form-outline mb-4">
                     <input type="text" id="id_login" name="login" value="<?php echo $_smarty_tpl->tpl_vars['form']->value->login;?>
 " class="form-control" />
-                    <label class="form-label" for="form2Example1">Email address</label>
+                    <label class="form-label" for="form2Example1">Login</label>
                 </div>
 
                 <!-- Password input -->
@@ -68,12 +68,13 @@ login" method="post">
 
                 <!-- Register buttons -->
                 <div class="text-center">
-                    <p>Not a member? <a href="#!">Register</a></p>
+                    <p>Not a member? <a href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+signUp">Register</a></p>
                     <p>or sign up with:</p>
                 </div>
             </form>
             <?php if ($_smarty_tpl->tpl_vars['msgs']->value->isMessage()) {?>
-                <div class="messages bottom-margin">
+                <div class="alert alert-primary messages bottom-margin">
                     <ul>
                         <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['msgs']->value->getMessages(), 'msg');

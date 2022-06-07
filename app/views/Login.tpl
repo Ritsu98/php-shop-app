@@ -7,7 +7,7 @@
                 <!-- Email input -->
                 <div class="form-outline mb-4">
                     <input type="text" id="id_login" name="login" value="{$form->login}" class="form-control" />
-                    <label class="form-label" for="form2Example1">Email address</label>
+                    <label class="form-label" for="form2Example1">Login</label>
                 </div>
 
                 <!-- Password input -->
@@ -23,12 +23,12 @@
 
                 <!-- Register buttons -->
                 <div class="text-center">
-                    <p>Not a member? <a href="#!">Register</a></p>
+                    <p>Not a member? <a href="{$conf->action_root}signUp">Register</a></p>
                     <p>or sign up with:</p>
                 </div>
             </form>
             {if $msgs->isMessage()}
-                <div class="messages bottom-margin">
+                <div class="alert alert-primary messages bottom-margin">
                     <ul>
                         {foreach $msgs->getMessages() as $msg}
                             {strip}
