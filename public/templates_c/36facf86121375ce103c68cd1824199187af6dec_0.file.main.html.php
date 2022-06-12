@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-06-07 03:21:25
+/* Smarty version 4.1.0, created on 2022-06-07 11:29:26
   from 'C:\xammp\htdocs\php-shop-app\app\views\templates\main.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_629ea8150f7bb0_03276718',
+  'unifunc' => 'content_629f1a762f6281_70916491',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '36facf86121375ce103c68cd1824199187af6dec' => 
     array (
       0 => 'C:\\xammp\\htdocs\\php-shop-app\\app\\views\\templates\\main.html',
-      1 => 1654564875,
+      1 => 1654594158,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_629ea8150f7bb0_03276718 (Smarty_Internal_Template $_smarty_tpl) {
+function content_629f1a762f6281_70916491 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -58,9 +58,8 @@ usersList">Users</a></li>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
 productList">All Products</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                                <li><a class="dropdown-item" href="<?php echo $_smarty_tpl->tpl_vars['conf']->value->action_root;?>
+userOrdersList">Moje zamówienia</a></li>   
                             </ul>
                         </li>
                     </ul>
@@ -106,7 +105,7 @@ loginView" >
         </header>
         <!-- Section-->
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1258913071629ea8150f3951_88408226', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_675170753629f1a762f4cf8_19158736', 'content');
 ?>
 
         <!-- Footer-->
@@ -126,12 +125,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1258913071629ea815
 </html>
 <?php }
 /* {block 'content'} */
-class Block_1258913071629ea8150f3951_88408226 extends Smarty_Internal_Block
+class Block_675170753629f1a762f4cf8_19158736 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1258913071629ea8150f3951_88408226',
+    0 => 'Block_675170753629f1a762f4cf8_19158736',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

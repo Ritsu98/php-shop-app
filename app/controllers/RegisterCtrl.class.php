@@ -81,6 +81,14 @@ class RegisterCtrl {
             'max_length' => 200,
             'validator_message' => 'Hasło może zawierać maksymalnie 80 znaków'
         ]);
+        $this->form->pass2 = $v->validateFromPost('password', [
+            'trim' => true,
+            'required' => true,
+            'required_message' => 'Podaj hasło',
+            'min_length' => 0,
+            'max_length' => 200,
+            'validator_message' => 'Hasło może zawierać maksymalnie 80 znaków'
+        ]);
 
         try {
 
@@ -99,7 +107,9 @@ class RegisterCtrl {
             if (App::getConf()->debug)
                 Utils::addErrorMessage($e->getMessage());
         }
-            
+        if ($this->form->password != $this->form->pass2){
+            App::getMessages()->addMessage(new Message("Hasła się nie zgadzają", Message::ERROR));
+        }  
         if (!empty($validateLoginInDb)){
             App::getMessages()->addMessage(new Message("Login is taken", Message::ERROR));
         }

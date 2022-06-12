@@ -30,6 +30,10 @@
     <input type="password" name="password" id="form3Example4" class="form-control" />
     <label class="form-label" for="form3Example4">Password</label>
   </div>
+  <div class="form-outline mb-4">
+    <input type="password" name="pass2" id="form2" class="form-control" />
+    <label class="form-label" for="form2">Password</label>
+  </div>
   <!-- <input type="text" name="role" id="form3Example4" class="form-control" value="6" hidden/> -->
  
   <!-- Submit button -->

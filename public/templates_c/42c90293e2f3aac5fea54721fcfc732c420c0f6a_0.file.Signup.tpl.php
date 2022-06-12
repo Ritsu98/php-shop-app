@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.1.0, created on 2022-06-07 06:13:26
+/* Smarty version 4.1.0, created on 2022-06-07 10:44:11
   from 'C:\xammp\htdocs\php-shop-app\app\views\Signup.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.1.0',
-  'unifunc' => 'content_629ed06686b981_25209694',
+  'unifunc' => 'content_629f0fdb5d3973_01127966',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '42c90293e2f3aac5fea54721fcfc732c420c0f6a' => 
     array (
       0 => 'C:\\xammp\\htdocs\\php-shop-app\\app\\views\\Signup.tpl',
-      1 => 1654575195,
+      1 => 1654590877,
       2 => 'file',
     ),
   ),
@@ -20,24 +20,24 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_629ed06686b981_25209694 (Smarty_Internal_Template $_smarty_tpl) {
+function content_629f0fdb5d3973_01127966 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1477577278629ed0668405d1_90481986', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_23928548629f0fdb5aa9e5_49908348', 'content');
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, "main.html");
 }
 /* {block 'content'} */
-class Block_1477577278629ed0668405d1_90481986 extends Smarty_Internal_Block
+class Block_23928548629f0fdb5aa9e5_49908348 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1477577278629ed0668405d1_90481986',
+    0 => 'Block_23928548629f0fdb5aa9e5_49908348',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -73,6 +73,10 @@ register" style="width: 26rem;" method="post">
   <div class="form-outline mb-4">
     <input type="password" name="password" id="form3Example4" class="form-control" />
     <label class="form-label" for="form3Example4">Password</label>
+  </div>
+  <div class="form-outline mb-4">
+    <input type="password" name="pass2" id="form2" class="form-control" />
+    <label class="form-label" for="form2">Password</label>
   </div>
   <!-- <input type="text" name="role" id="form3Example4" class="form-control" value="6" hidden/> -->
  

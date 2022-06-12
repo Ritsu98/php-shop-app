@@ -53,7 +53,7 @@ class OrderCtrl {
                         App::getDB()->insert("orders", [
                             "order_id" => $this->form->count,
                             "client_id" => $this->form->id,
-                            "order_status" => "Nowe",
+                            "order_status" => "1",
                             "order_date" =>$this->form->date
                         ]);
                 foreach ($this->form->items as &$item) {
